@@ -89,11 +89,11 @@ public class FlagDrawer{
         UI.fillRect(LEFT, TOP + (height * 1/2), width, height * 1/2); // Draw Red rectangle
         
         // Draw Red Semi-circle
-        UI.fillArc (LEFT + (width * 1/6), TOP + (height * 1/6), width / 2.25, height * 2/3, 0, 180); // Draw Red Semi-circle
+        UI.fillArc(LEFT + (width * 1/6), TOP + (height * 1/6), width / 2.25, height * 2/3, 0, 180); // Draw Red Semi-circle
         
         // Draw White Semi-circle
-        // Set Color White
-        // Fill Arc LEFT + (width * 1/6), TOP + (height * 1/6), width / 2.25, height * 2/3, 180, 180
+        UI.setColor(Color.white); // Use white pen
+        UI.fillArc(LEFT + (width * 1/6), TOP + (height * 1/6), width / 2.25, height * 2/3, 180, 180);// Fill Arc 
         
         // Draw Flag Outline
         UI.setColor(Color.black); // Use black pen
