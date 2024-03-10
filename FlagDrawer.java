@@ -74,26 +74,29 @@ public class FlagDrawer{
         UI.clearGraphics();
         UI.println("Greenland Flag");
         double width = UI.askDouble("How wide: "); // ask user for width
+        
+        // declare and intialise local variables
+        double oneSixthWidth = width * 1/6;
+        double arcWidth = width / 2.25;
         double height = width * 2/3;
+        double halfHeight = height * 1/2;
+        double oneSixthHeight = height * 1/6;
+        double twoThirdsHeight = height * 2/3;
 
-        // NOTE: height * 1/2 = width * 1/3
-        // NOTE: height * 2/3 = width/2.25
-
-        /*# YOUR CODE HERE */
         // Draw White Half
         UI.setColor(Color.white);// Use white pen
-        UI.fillRect (LEFT, TOP, width, height * 1/2); // Draw White rectangle
+        UI.fillRect (LEFT, TOP, width, halfHeight); // Draw White rectangle
         
         // Draw Red Half
         UI.setColor(Color.red); // Use red pen
-        UI.fillRect(LEFT, TOP + (height * 1/2), width, height * 1/2); // Draw Red rectangle
+        UI.fillRect(LEFT, TOP + halfHeight, width, halfHeight); // Draw Red rectangle
         
         // Draw Red Semi-circle
-        UI.fillArc(LEFT + (width * 1/6), TOP + (height * 1/6), width / 2.25, height * 2/3, 0, 180); // Draw Red Semi-circle
+        UI.fillArc(LEFT + oneSixthWidth, TOP + oneSixthHeight, arcWidth, twoThirdsHeight, 0, 180); // Draw Red Semi-circle
         
         // Draw White Semi-circle
         UI.setColor(Color.white); // Use white pen
-        UI.fillArc(LEFT + (width * 1/6), TOP + (height * 1/6), width / 2.25, height * 2/3, 180, 180);// Fill Arc 
+        UI.fillArc(LEFT + oneSixthWidth, TOP + oneSixthHeight, arcWidth, twoThirdsHeight, 180, 180);// Fill Arc 
         
         // Draw Flag Outline
         UI.setColor(Color.black); // Use black pen
@@ -120,7 +123,7 @@ public class FlagDrawer{
      * DO NOT DO THIS IF YOU HAVE NOT DONE THE PREVIOUS METHODS
      * Draw the Misubishi Logo.
      */
-    public void drawMitsubishiLogo() {
+        public void drawMitsubishiLogo() {
         /*# YOUR CODE HERE */
 
     }
