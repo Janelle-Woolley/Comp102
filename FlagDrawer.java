@@ -84,8 +84,8 @@ public class FlagDrawer{
         UI.fillRect (LEFT, TOP, width, height * 1/2); // Draw White rectangle
         
         // Draw Red Half
-        // Set Color Red
-        // Fill Rect LEFT, TOP + (height * 1/2), width, height * 1/2
+        UI.setColor(Color.red); // Use red pen
+        UI.fillRect (LEFT, TOP + (height * 1/2), width, height * 1/2); // Draw Red rectangle
         
         // Draw Red Semi-circle
         // Fill Arc LEFT + (width * 1/6), TOP + (height * 1/6), width / 2.25, height * 1/3, 0, 180
