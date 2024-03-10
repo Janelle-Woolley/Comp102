@@ -74,7 +74,7 @@ public class FlagDrawer{
         UI.clearGraphics();
         UI.println("Greenland Flag");
         double width = UI.askDouble("How wide: "); // ask user for width
-        // double height = width * 2/3
+        double height = width * 2/3;
 
         // NOTE: height * 1/2 = width * 1/3
 
@@ -95,8 +95,8 @@ public class FlagDrawer{
         // Fill Arc LEFT + (width * 1/6), TOP + (height * 1/6), width / 2.25, height * 1/3, 180, 180
         
         // Draw Flag Outline
-        // Set Color Black
-        // Draw Rect LEFT, TOP, width, height
+        UI.setColor(Color.black); // Use black pen
+        UI.drawRect(LEFT, TOP, width, height); // Draw Black Outline
 
     }
     
