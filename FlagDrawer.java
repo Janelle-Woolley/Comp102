@@ -15,7 +15,7 @@ import java.awt.Color;
  * Draws various flags
  *
  * @author Janelle Woolley
- * @version 1.0 11/03/2024
+ * @version 1.1 11/03/2024
  * 
  * You can find lots of flag details (including the correct dimensions and colours)
  * from  http://www.crwflags.com/fotw/flags/ 
@@ -117,21 +117,24 @@ public class FlagDrawer{
         double height = width / 1.5;
 
         /*# YOUR CODE HERE */
-        // Draw White Half
-        UI.setColor(Color.white); // Use white pen
-        UI.fillRect(LEFT, TOP, width, height * 1/2); // Draw white stripe
-        
-        // Draw Red Half
-        UI.setColor(Color.red); // Use red pen
-        UI.fillRect(LEFT, TOP + (height * 1/2), width, height * 1/2); // Draw red stripe
-        
-        // Draw Blue Triangle
-        // Draw Arc
+        // Draw Blue Section
         // Use blue pen
-        // Fill Arc (LEFT, TOP, width, height, 135, 90)
-        // Draw over curve
+        // Fill Rect (LEFT, TOP, width * 1/2, height)
+        
+        // Draw White Arc
         // Use white pen
-        // Fill Rect (LEFT - LEFT, TOP, LEFT, height)
+        // Fill Arc (LEFT - width, TOP - height, width, height, 315, 45)
+        
+        // Draw Red Arc
+        // Use red pen
+        // Fill Arc (LEFT - width, TOP - height, width, height, 0, 45)
+        
+        // Fill Red Stripe
+        // Fill Rect (LEFT + (width * 1/2), TOP + (height * 1/2), width * 1/2, height * 1/2)
+        
+        // Fill White Stripe
+        // Use white pen
+        // Fill Rect (LEFT + (width * 1/2), TOP, width * 1/2, height * 1/2)
         
         // Draw Flag Outline
         UI.setColor(Color.black); // Use black pen
