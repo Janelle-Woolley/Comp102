@@ -34,7 +34,9 @@ public class FlagDrawer{
     public void drawUAEFlag() {
         UI.clearGraphics();
         UI.println("UAE Flag");
-        double width = UI.askDouble("How wide: ");
+        double width = UI.askDouble("How wide: "); // ask user for width
+        
+        // declare and intalise variables for repeated values
         double height = width/2;
         double stripeLeft = LEFT + (width * 1/4);
         double stripeWidth = width * 3/4;
@@ -43,11 +45,11 @@ public class FlagDrawer{
         /*# YOUR CODE HERE */
         // Draw Vertical Red Section
         UI.setColor(Color.red); // Use red pen
-        UI.fillRect( LEFT, TOP, width * 1/4, height); // Draw red rectangle
+        UI.fillRect(LEFT, TOP, width * 1/4, height); // Draw red rectangle
         
-        // Horizontal Green Stripe
-        // Set Color
-        // Fill Rect stripeLeft, TOP, stripeWidth, stripeHeight
+        // Draw Horizontal Green Stripe
+        UI.setColor(Color.green);// Use green pen
+        UI.fillRect(stripeLeft, TOP, stripeWidth, stripeHeight); // Draw green stripe
         
         // Horizontal White Stripe
         // Set Color
