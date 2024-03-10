@@ -77,6 +77,7 @@ public class FlagDrawer{
         double height = width * 2/3;
 
         // NOTE: height * 1/2 = width * 1/3
+        // NOTE: height * 2/3 = width/2.25
 
         /*# YOUR CODE HERE */
         // Draw White Half
@@ -85,14 +86,14 @@ public class FlagDrawer{
         
         // Draw Red Half
         UI.setColor(Color.red); // Use red pen
-        UI.fillRect (LEFT, TOP + (height * 1/2), width, height * 1/2); // Draw Red rectangle
+        UI.fillRect(LEFT, TOP + (height * 1/2), width, height * 1/2); // Draw Red rectangle
         
         // Draw Red Semi-circle
-        // Fill Arc LEFT + (width * 1/6), TOP + (height * 1/6), width / 2.25, height * 1/3, 0, 180
+        UI.fillArc (LEFT + (width * 1/6), TOP + (height * 1/6), width / 2.25, height * 2/3, 0, 180); // Draw Red Semi-circle
         
         // Draw White Semi-circle
         // Set Color White
-        // Fill Arc LEFT + (width * 1/6), TOP + (height * 1/6), width / 2.25, height * 1/3, 180, 180
+        // Fill Arc LEFT + (width * 1/6), TOP + (height * 1/6), width / 2.25, height * 2/3, 180, 180
         
         // Draw Flag Outline
         UI.setColor(Color.black); // Use black pen
