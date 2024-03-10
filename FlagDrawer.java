@@ -58,8 +58,8 @@ public class FlagDrawer{
         UI.setColor(Color.black); // Use black pen
         UI.fillRect(stripeLeft, TOP + (height * 2/3), stripeWidth, stripeHeight); // Draw black stripe 
         
-        // Draw Black Outline
-        UI.drawRect(LEFT, TOP, width, height); // Draw Black Flag Outline 
+        // Draw Flag Outline
+        UI.drawRect(LEFT, TOP, width, height); // Draw Black Outline 
 
     }
 
@@ -73,9 +73,30 @@ public class FlagDrawer{
     public void drawGreenlandFlag() {
         UI.clearGraphics();
         UI.println("Greenland Flag");
-        double width = UI.askDouble("How wide: ");
+        double width = UI.askDouble("How wide: "); // ask user for width
+        // double height = width * 2/3
+
+        // NOTE: height * 1/2 = width * 1/3
 
         /*# YOUR CODE HERE */
+        // Draw White Half
+        // Set Color White
+        // Fill Rect LEFT, TOP, width, height * 1/2
+        
+        // Draw Red Half
+        // Set Color Red
+        // Fill Rect LEFT, TOP + (height * 1/2), width, height * 1/2
+        
+        // Draw Red Semi-circle
+        // Fill Arc LEFT + (width * 1/6), TOP + (height * 1/6), width / 2.25, height * 1/3, 0, 180
+        
+        // Draw White Semi-circle
+        // Set Color White
+        // Fill Arc LEFT + (width * 1/6), TOP + (height * 1/6), width / 2.25, height * 1/3, 180, 180
+        
+        // Draw Flag Outline
+        // Set Color Black
+        // Draw Rect LEFT, TOP, width, height
 
     }
     
