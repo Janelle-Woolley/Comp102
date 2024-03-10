@@ -42,7 +42,6 @@ public class FlagDrawer{
         double stripeWidth = width * 3/4;
         double stripeHeight = height * 1/3;
 
-        /*# YOUR CODE HERE */
         // Draw Vertical Red Section
         UI.setColor(Color.red); // Use red pen
         UI.fillRect(LEFT, TOP, width * 1/4, height); // Draw red rectangle
@@ -59,8 +58,8 @@ public class FlagDrawer{
         UI.setColor(Color.black); // Use black pen
         UI.fillRect(stripeLeft, TOP + (height * 2/3), stripeWidth, stripeHeight); // Draw black stripe 
         
-        // Black Outline
-        // Draw Rect LEFT, TOP, width, height
+        // Draw Black Outline
+        UI.drawRect(LEFT, TOP, width, height); // Draw Black Flag Outline 
 
     }
 
