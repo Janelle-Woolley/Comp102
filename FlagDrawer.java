@@ -35,8 +35,30 @@ public class FlagDrawer{
         UI.clearGraphics();
         UI.println("UAE Flag");
         double width = UI.askDouble("How wide: ");
+        // double height = width/2
+        // double stripeLeft = LEFT + (width * 1/4)
+        // double stripeWidth = width * 3/4
+        // double stripeHeight = height * 1/3
 
         /*# YOUR CODE HERE */
+        // Vertical Red Section
+        // Set Color
+        // Draw Rect LEFT, TOP, width * 1/4, height
+        
+        // Horizontal Green Section
+        // Set Color
+        // Fill Rect stripeLeft, TOP, stripeWidth, stripeHeight
+        
+        // Horizontal White Section
+        // Set Color
+        // Fill Rect stripeLeft, TOP + (height * 1/3), stripeWidth, stripeHeight
+        
+        // Horizontal Black Section
+        // Set Color
+        // Fill Rect stripeLeft, TOP + (height * 2/3), stripeWidth, stripeHeight
+        
+        // Black Outline
+        // Draw Rect LEFT, TOP, width, height
 
     }
 
