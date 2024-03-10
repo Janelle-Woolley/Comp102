@@ -118,8 +118,8 @@ public class FlagDrawer{
 
         /*# YOUR CODE HERE */
         // Draw White Half
-        // Use white pen
-        // Fill Rect (LEFT, TOP, width, height * 1/2)
+        UI.setColor(Color.white); // Use white pen
+        UI.fillRect (LEFT, TOP, width, height * 1/2); // Draw white stripe
         
         // Draw Red Half
         // Use red pen
