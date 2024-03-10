@@ -118,8 +118,8 @@ public class FlagDrawer{
 
         /*# YOUR CODE HERE */
         // Draw Blue Section
-        // Use blue pen
-        // Fill Rect (LEFT, TOP, width * 1/2, height)
+        UI.setColor(Color.blue); // Use blue pen
+        UI.fillRect(LEFT, TOP, width * 1/2, height); // Make half the flag blue
         
         // Draw White Arc
         // Use white pen
