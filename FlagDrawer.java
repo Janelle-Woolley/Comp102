@@ -51,9 +51,9 @@ public class FlagDrawer{
         UI.setColor(Color.green);// Use green pen
         UI.fillRect(stripeLeft, TOP, stripeWidth, stripeHeight); // Draw green stripe
         
-        // Horizontal White Stripe
-        // Set Color
-        // Fill Rect stripeLeft, TOP + (height * 1/3), stripeWidth, stripeHeight
+        // Draw Horizontal White Stripe
+        UI.setColor(Color.white);// Use white pen
+        UI.fillRect(stripeLeft, TOP + (height * 1/3), stripeWidth, stripeHeight); // Draw white stripe 
         
         // Horizontal Black Stripe
         // Set Color
