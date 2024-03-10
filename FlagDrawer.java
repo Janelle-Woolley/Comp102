@@ -113,9 +113,28 @@ public class FlagDrawer{
     public  void drawCzechFlag(){
         UI.clearGraphics();  
         UI.println("Czech Flag");
-        double width = UI.askDouble("How wide: ");
+        double width = UI.askDouble("How wide: "); // ask user for width
 
         /*# YOUR CODE HERE */
+        // Draw White Half
+        // Use white pen
+        // Fill Rect (LEFT, TOP, width, height * 1/2)
+        
+        // Draw Red Half
+        // Use red pen
+        // Fill Rect (LEFT, TOP + (height * 1/2), width, height * 1/2)
+        
+        // Draw Blue Triangle
+        // Draw Arc
+        // Use blue pen
+        // Fill Arc (LEFT, TOP, width, height, 135, 90)
+        // Draw over curve
+        // Use white pen
+        // Fill Rect (LEFT - LEFT, TOP, LEFT, height)
+        
+        // Draw Flag Outline
+        // Use black pen
+        // Draw Rect (LEFT, TOP, width, height)
 
     }
     
