@@ -15,7 +15,7 @@ import java.awt.Color;
  * Draws various flags
  *
  * @author Janelle Woolley
- * @version 1.0 07/03/2024
+ * @version 1.0 11/03/2024
  * 
  * You can find lots of flag details (including the correct dimensions and colours)
  * from  http://www.crwflags.com/fotw/flags/ 
@@ -114,6 +114,7 @@ public class FlagDrawer{
         UI.clearGraphics();  
         UI.println("Czech Flag");
         double width = UI.askDouble("How wide: "); // ask user for width
+        double height = width / 1.5;
 
         /*# YOUR CODE HERE */
         // Draw White Half
@@ -133,8 +134,8 @@ public class FlagDrawer{
         // Fill Rect (LEFT - LEFT, TOP, LEFT, height)
         
         // Draw Flag Outline
-        // Use black pen
-        // Draw Rect (LEFT, TOP, width, height)
+        UI.setColor(Color.black); // Use black pen
+        UI.drawRect(LEFT, TOP, width, height); // Draw Black outline
 
     }
     
