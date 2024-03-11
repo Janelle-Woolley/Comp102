@@ -130,7 +130,7 @@ public class FlagDrawer{
         UI.fillArc(LEFT - width, TOP - (width-height), width * 2, width * 2, 0, 33.69); // Draw red arc to get bottom side of triangle
         
         // Fill Red Stripe
-        // Fill Rect (LEFT + (width * 1/2), TOP + (height * 1/2), width * 1/2, height * 1/2)
+        UI.fillRect(LEFT + (width * 1/2), TOP + (height * 1/2), width * 1/2, height * 1/2); // Draw red rectangle to finish red stripe
         
         // Fill White Stripe
         // Use white pen
