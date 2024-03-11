@@ -122,8 +122,8 @@ public class FlagDrawer{
         UI.fillRect(LEFT, TOP, width * 1/2, height); // Make half the flag blue
         
         // Draw White Arc
-        // Use white pen
-        // Fill Arc (LEFT - width, TOP - height, width, height, 315, 45)
+        UI.setColor(Color.white); // Use white pen
+        UI.fillArc(LEFT - width, TOP - width, width * 2, width * 2, 315, 45); // Draw arc to get top half of triangle
         
         // Draw Red Arc
         // Use red pen
