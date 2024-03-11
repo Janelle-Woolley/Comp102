@@ -133,8 +133,8 @@ public class FlagDrawer{
         UI.fillRect(LEFT + (width * 1/2), TOP + (height * 1/2), width * 1/2, height * 1/2); // Draw red rectangle to finish red stripe
         
         // Fill White Stripe
-        // Use white pen
-        // Fill Rect (LEFT + (width * 1/2), TOP, width * 1/2, height * 1/2)
+        UI.setColor(Color.white); // Use white pen
+        UI.fillRect(LEFT + (width * 1/2), TOP, width * 1/2, height * 1/2); // Draw white rectangle to finish white stripe
         
         // Draw Flag Outline
         UI.setColor(Color.black); // Use black pen
