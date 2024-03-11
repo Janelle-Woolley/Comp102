@@ -122,12 +122,12 @@ public class FlagDrawer{
         UI.fillRect(LEFT, TOP, width * 1/2, height); // Make half the flag blue
         
         // Draw White Arc
-        UI.setColor(Color.white); // Use white pen
-        UI.fillArc(LEFT - width, TOP - width, width * 2, width * 2, 315, 45); // Draw arc to get top half of triangle
+        UI.setColor(Color.red); // Use white pen
+        UI.fillArc(LEFT - width, TOP - width, width * 2, width * 2, 326.31, 33.69); // Draw arc to get top half of triangle
         
         // Draw Red Arc
-        // Use red pen
-        // Fill Arc (LEFT - width, TOP - height, width, height, 0, 45)
+        UI.setColor(Color.red); // Use red pen
+        // Fill Arc (LEFT - width, TOP - height, width * 2, height * 2, 0, 45)
         
         // Fill Red Stripe
         // Fill Rect (LEFT + (width * 1/2), TOP + (height * 1/2), width * 1/2, height * 1/2)
