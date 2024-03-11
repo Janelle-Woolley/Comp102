@@ -114,27 +114,31 @@ public class FlagDrawer{
         UI.clearGraphics();  
         UI.println("Czech Flag");
         double width = UI.askDouble("How wide: "); // ask user for width
+        
+        // declare and initalise local variables
+        double halfWidth = width * 1/2;
+        double doubleWidth = width * 2;
         double height = width / 1.5;
+        double halfHeight = height * 1/2; 
 
-        /*# YOUR CODE HERE */
         // Draw Blue Section
         UI.setColor(Color.blue); // Use blue pen
-        UI.fillRect(LEFT, TOP, width * 1/2, height); // Make half the flag blue
+        UI.fillRect(LEFT, TOP, halfWidth, height); // Make half the flag blue
         
         // Draw White Arc
         UI.setColor(Color.white); // Use white pen
-        UI.fillArc(LEFT - width, TOP - width, width * 2, width * 2, 326.31, 33.69); // Draw white arc to get top side of triangle
+        UI.fillArc(LEFT - width, TOP - width, doubleWidth, doubleWidth, 326.31, 33.69); // Draw white arc to get top side of triangle
         
         // Draw Red Arc
         UI.setColor(Color.red); // Use red pen
-        UI.fillArc(LEFT - width, TOP - (width-height), width * 2, width * 2, 0, 33.69); // Draw red arc to get bottom side of triangle
+        UI.fillArc(LEFT - width, TOP - (width-height), doubleWidth, doubleWidth, 0, 33.69); // Draw red arc to get bottom side of triangle
         
         // Fill Red Stripe
-        UI.fillRect(LEFT + (width * 1/2), TOP + (height * 1/2), width * 1/2, height * 1/2); // Draw red rectangle to finish red stripe
+        UI.fillRect(LEFT + halfWidth, TOP + halfHeight, halfWidth, height * 1/2); // Draw red rectangle to finish red stripe
         
         // Fill White Stripe
         UI.setColor(Color.white); // Use white pen
-        UI.fillRect(LEFT + (width * 1/2), TOP, width * 1/2, height * 1/2); // Draw white rectangle to finish white stripe
+        UI.fillRect(LEFT + halfWidth, TOP, halfWidth, halfHeight); // Draw white rectangle to finish white stripe
         
         // Draw Flag Outline
         UI.setColor(Color.black); // Use black pen
