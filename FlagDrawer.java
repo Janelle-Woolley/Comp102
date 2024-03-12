@@ -167,10 +167,10 @@ public class FlagDrawer{
         UI.fillArc(LEFT + (width * 1/10), TOP + (height * 2/10), width * 3/10, height * 3/10, 300, 60); // Draw middle right arc
         
         // Draw Top Triangle
-        //UI.fillArc(LEFT + (width * 1/10), (TOP - radius*2) - radius*3/16 , width + (radius * 2/3), height + (radius * 2/3), 240, 60); // draw top arc
+        UI.fillArc(LEFT + (width * 1/10), TOP - (height * 5/100), width * 3/10, height * 3/10, 240, 60); // draw top arc
         
         // Draw Left Triangle
-        //UI.fillArc((LEFT - radius*2) - radius*4/16, TOP + (radius * 2) + radius*13/24, width + (radius * 2/3), height + (radius * 2/3), 0, 60);
+        //UI.fillArc(LEFT - (width * 3/10), TOP + (height * 6/10), width * 3/10, height * 3/10, 0, 60);
         // Fill Arc ()
         
         // Draw Right Triangle
