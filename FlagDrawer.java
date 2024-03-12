@@ -174,7 +174,8 @@ public class FlagDrawer{
         UI.fillArc(LEFT - radius*36/16, TOP + (radius * 41/16), width + (radius * 2/3), height + (radius * 2/3), 0, 60); // draw left arc
         
         // Draw Right Triangle
-        // Fill Arc (LEFT + (radius * 2), TOP + (radius * 2), width + (radius * 2/3), height + (radius * 2/3), 120, 60)
+        UI.fillArc(LEFT + (radius * 26/8), TOP + (radius * 41/16), width + (radius * 2/3), height + (radius * 2/3), 120, 60);
+        // Fill Arc ()
         
         // Draw Outline
         // Use black pen
