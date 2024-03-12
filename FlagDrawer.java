@@ -163,12 +163,12 @@ public class FlagDrawer{
         UI.setColor(Color.red); // Use red pen
         
         // Draw Middle Triangles
-        UI.fillArc(LEFT + radius * 1/2, TOP + radius, width + (radius * 2/3), height + (radius * 2/3), 60, 60); // Draw middle top arc
-        UI.fillArc(LEFT + radius * 1/2, TOP + radius, width + (radius * 2/3), height + (radius * 2/3), 180, 60); // Draw middle left arc
-        UI.fillArc(LEFT + radius * 1/2, TOP + radius, width + (radius * 2/3), height + (radius * 2/3), 300, 60); // Draw middle right arc
+        UI.fillArc(LEFT + (radius * 1/2), TOP + radius, width + (radius * 2/3), height + (radius * 2/3), 60, 60); // Draw middle top arc
+        UI.fillArc(LEFT + (radius * 1/2), TOP + radius, width + (radius * 2/3), height + (radius * 2/3), 180, 60); // Draw middle left arc
+        UI.fillArc(LEFT + (radius * 1/2), TOP + radius, width + (radius * 2/3), height + (radius * 2/3), 300, 60); // Draw middle right arc
         
         // Draw Top Triangle
-        // Fill Arc (LEFT + radius * 1/2, TOP - radius, width + (radius * 2/3), height + (radius * 2/3), 240, 60)
+        UI.fillArc(LEFT + (radius * 1/2), (TOP - radius*2) - radius*3/16 , width + (radius * 2/3), height + (radius * 2/3), 240, 60); // draw top arc
         
         // Draw Left Triangle
         // Fill Arc (LEFT - radius, TOP + (radius * 2), width + (radius * 2/3), height + (radius * 2/3), 0, 60)
