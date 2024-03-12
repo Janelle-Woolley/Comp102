@@ -157,21 +157,21 @@ public class FlagDrawer{
         UI.clearGraphics();  
         UI.println("Mitsubishi Logo");
         double width = UI.askDouble("How wide: "); // ask user for width
-        double height = width * 6/5;
+        double height = width;
+        double radius = width / 3;
         
         UI.setColor(Color.red); // Use red pen
         
         // Draw Middle Triangles
-        UI.fillArc(LEFT + (width * 1/10), TOP + (height * 2/10), width * 3/10, height * 3/10, 60, 60); // Draw middle top arc
-        UI.fillArc(LEFT + (width * 1/10), TOP + (height * 2/10), width * 3/10, height * 3/10, 180, 60); // Draw middle left arc
-        UI.fillArc(LEFT + (width * 1/10), TOP + (height * 2/10), width * 3/10, height * 3/10, 300, 60); // Draw middle right arc
+        UI.fillArc(LEFT + (radius * 1/2), TOP + radius, width + (radius * 2/3), height + (radius * 2/3), 60, 60); // Draw middle top arc
+        UI.fillArc(LEFT + (radius * 1/2), TOP + radius, width + (radius * 2/3), height + (radius * 2/3), 180, 60); // Draw middle left arc
+        UI.fillArc(LEFT + (radius * 1/2), TOP + radius, width + (radius * 2/3), height + (radius * 2/3), 300, 60); // Draw middle right arc
         
         // Draw Top Triangle
-        UI.fillArc(LEFT + (width * 1/10), TOP - (height * 5/100), width * 3/10, height * 3/10, 240, 60); // draw top arc
+        UI.fillArc(LEFT + (radius * 1/2), (TOP - radius*2) - radius*3/16 , width + (radius * 2/3), height + (radius * 2/3), 240, 60); // draw top arc
         
         // Draw Left Triangle
-        //UI.fillArc(LEFT - (width * 3/10), TOP + (height * 6/10), width * 3/10, height * 3/10, 0, 60);
-        // Fill Arc ()
+        UI.fillArc(LEFT - radius*36/16, TOP + (radius * 41/16), width + (radius * 2/3), height + (radius * 2/3), 0, 60); // draw left arc
         
         // Draw Right Triangle
         // Fill Arc (LEFT + (radius * 2), TOP + (radius * 2), width + (radius * 2/3), height + (radius * 2/3), 120, 60)
