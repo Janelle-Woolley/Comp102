@@ -157,13 +157,15 @@ public class FlagDrawer{
         UI.clearGraphics();  
         UI.println("Mitsubishi Logo");
         double width = UI.askDouble("How wide: "); // ask user for width
+        double height = width;
+        double radius = width / 3;
         
-        // Use red pen
+        UI.setColor(Color.red); // Use red pen
         
         // Draw Middle Triangles
-        // Fill Arc (LEFT + radius * 1/2, TOP + radius, width + (radius * 2/3), height + (radius * 2/3), 60, 60)
-        // Fill Arc (LEFT + radius * 1/2, TOP + radius, width + (radius * 2/3), height + (radius * 2/3), 180, 60)
-        // Fill Arc (LEFT + radius * 1/2, TOP + radius, width + (radius * 2/3), height + (radius * 2/3), 300, 60)
+        UI.fillArc(LEFT + radius * 1/2, TOP + radius, width + (radius * 2/3), height + (radius * 2/3), 60, 60); // Draw middle top arc
+        UI.fillArc(LEFT + radius * 1/2, TOP + radius, width + (radius * 2/3), height + (radius * 2/3), 180, 60); // Draw middle left arc
+        UI.fillArc(LEFT + radius * 1/2, TOP + radius, width + (radius * 2/3), height + (radius * 2/3), 300, 60); // Draw middle right arc
         
         // Draw Top Triangle
         // Fill Arc (LEFT + radius * 1/2, TOP - radius, width + (radius * 2/3), height + (radius * 2/3), 240, 60)
