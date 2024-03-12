@@ -157,24 +157,34 @@ public class FlagDrawer{
         UI.clearGraphics();  
         UI.println("Mitsubishi Logo");
         double width = UI.askDouble("How wide: "); // ask user for width
-        double height = width*11/12;
+        
+        // declare and initalise local variables
         double radius = width / 3;
+        double diamiter = radius * 2;
+        
+        // LEFT and TOP shifts for the arcs
+        double middleTriangleLeft = LEFT + (radius * 1/2);
+        double leftTriangleLeft = LEFT - radius;
+        double rightTriangleRight = LEFT + (radius * 2);
+        double middleTriangleTop = TOP + (radius * 3/4);
+        double topTriangleTop = TOP - (radius * 31/32);
+        double bottomTriangleTop = TOP + (radius * 13/8);
         
         UI.setColor(Color.red); // Use red pen
         
         // Draw Middle Triangles
-        UI.fillArc(LEFT + (radius * 1/2), TOP + radius*3/4, radius * 2, radius * 2, 60, 60); // Draw middle top arc
-        UI.fillArc(LEFT + (radius * 1/2), TOP + radius*3/4, radius * 2, radius * 2, 180, 60); // Draw middle left arc
-        UI.fillArc(LEFT + (radius * 1/2), TOP + radius*3/4, radius * 2, radius * 2, 300, 60); // Draw middle right arc
+        UI.fillArc(middleTriangleLeft, middleTriangleTop, diamiter, diamiter, 60, 60); // Draw middle top arc
+        UI.fillArc(middleTriangleLeft, middleTriangleTop, diamiter, diamiter, 180, 60); // Draw middle left arc
+        UI.fillArc(middleTriangleLeft, middleTriangleTop, diamiter, diamiter, 300, 60); // Draw middle right arc
         
         // Draw Top Triangle
-        UI.fillArc(LEFT + (radius * 1/2), (TOP - radius*3/4) - radius*3/16, radius * 2, radius * 2, 240, 60); // draw top arc
+        UI.fillArc(middleTriangleLeft, topTriangleTop, diamiter, diamiter, 240, 60); // draw top arc
         
         // Draw Left Triangle
-        UI.fillArc(LEFT - radius, TOP + (radius * 13/8), radius * 2, radius * 2, 0, 60); // draw left arc
+        UI.fillArc(leftTriangleLeft, bottomTriangleTop, diamiter, diamiter, 0, 60); // draw left arc
         
         // Draw Right Triangle
-        UI.fillArc(LEFT + radius*2, TOP + (radius * 13/8), radius * 2, radius * 2, 120, 60); // draw right arc
+        UI.fillArc(rightTriangleRight, bottomTriangleTop, diamiter, diamiter, 120, 60); // draw right arc
 
     }
 
