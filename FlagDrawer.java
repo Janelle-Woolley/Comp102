@@ -76,27 +76,27 @@ public class FlagDrawer{
         double width = UI.askDouble("How wide: "); // ask user for width
         
         // declare and intialise local variables
-        double oneSixthWidth = width * 1/6;
-        double arcWidth = width / 2.25;
         double height = width * 2/3;
-        double halfHeight = height * 1/2;
-        double oneSixthHeight = height * 1/6;
-        double twoThirdsHeight = height * 2/3;
+        double stripeheight = height * 1/2;
+        double arcLeft = LEFT + (width * 1/6);
+        double arcTop = TOP + (height * 1/6);
+        double arcWidth = width / 2.25;
+        double arcHeight = height * 2/3;
 
         // Draw White Half
         UI.setColor(Color.white);// Use white pen
-        UI.fillRect (LEFT, TOP, width, halfHeight); // Draw White rectangle
+        UI.fillRect (LEFT, TOP, width, stripeheight); // Draw White rectangle
         
         // Draw Red Half
         UI.setColor(Color.red); // Use red pen
-        UI.fillRect(LEFT, TOP + halfHeight, width, halfHeight); // Draw Red rectangle
+        UI.fillRect(LEFT, TOP + stripeheight, width, stripeheight); // Draw Red rectangle
         
         // Draw Red Semi-circle
-        UI.fillArc(LEFT + oneSixthWidth, TOP + oneSixthHeight, arcWidth, twoThirdsHeight, 0, 180); // Draw Red Semi-circle
+        UI.fillArc(arcLeft, arcTop, arcWidth, arcHeight, 0, 180); // Draw Red Semi-circle
         
         // Draw White Semi-circle
         UI.setColor(Color.white); // Use white pen
-        UI.fillArc(LEFT + oneSixthWidth, TOP + oneSixthHeight, arcWidth, twoThirdsHeight, 180, 180);// Fill Arc 
+        UI.fillArc(arcLeft, arcTop, arcWidth, arcHeight, 180, 180);// Fill Arc 
         
         // Draw Flag Outline
         UI.setColor(Color.black); // Use black pen
@@ -117,9 +117,11 @@ public class FlagDrawer{
         
         // declare and initalise local variables
         double halfWidth = width * 1/2;
-        double doubleWidth = width * 2;
         double height = width / 1.5;
-        double halfHeight = height * 1/2; 
+        double arcLeft = LEFT - width;
+        double arcDiamiter = width * 2;
+        double stripeLeft = LEFT + halfWidth;
+        double stripeHeight = height * 1/2; 
 
         // Draw Blue Section
         UI.setColor(Color.blue); // Use blue pen
@@ -127,18 +129,18 @@ public class FlagDrawer{
         
         // Draw White Arc
         UI.setColor(Color.white); // Use white pen
-        UI.fillArc(LEFT - width, TOP - width, doubleWidth, doubleWidth, 326.31, 33.69); // Draw white arc to get top side of triangle
+        UI.fillArc(arcLeft, TOP - width, arcDiamiter, arcDiamiter, 326.31, 33.69); // Draw white arc to get top side of triangle
         
         // Draw Red Arc
         UI.setColor(Color.red); // Use red pen
-        UI.fillArc(LEFT - width, TOP - (width-height), doubleWidth, doubleWidth, 0, 33.69); // Draw red arc to get bottom side of triangle
+        UI.fillArc(arcLeft, TOP - (width-height), arcDiamiter, arcDiamiter, 0, 33.69); // Draw red arc to get bottom side of triangle
         
         // Fill Red Stripe
-        UI.fillRect(LEFT + halfWidth, TOP + halfHeight, halfWidth, height * 1/2); // Draw red rectangle to finish red stripe
+        UI.fillRect(stripeLeft, TOP + stripeHeight, halfWidth, stripeHeight); // Draw red rectangle to finish red stripe
         
         // Fill White Stripe
         UI.setColor(Color.white); // Use white pen
-        UI.fillRect(LEFT + halfWidth, TOP, halfWidth, halfHeight); // Draw white rectangle to finish white stripe
+        UI.fillRect(stripeLeft, TOP, halfWidth, stripeHeight); // Draw white rectangle to finish white stripe
         
         // Draw Flag Outline
         UI.setColor(Color.black); // Use black pen
