@@ -96,7 +96,7 @@ public class FlagDrawer{
         
         // Draw White Semi-circle
         UI.setColor(Color.white); // Use white pen
-        UI.fillArc(arcLeft, arcTop, arcWidth, arcHeight, 180, 180);// Fill Arc 
+        UI.fillArc(arcLeft, arcTop, arcWidth, arcHeight, 180, 180); // Fill Arc 
         
         // Draw Flag Outline
         UI.setColor(Color.black); // Use black pen
@@ -153,7 +153,6 @@ public class FlagDrawer{
      * Draw the Misubishi Logo.
      */
         public void drawMitsubishiLogo() {
-        /*# YOUR CODE HERE */
         UI.clearGraphics();  
         UI.println("Mitsubishi Logo");
         double width = UI.askDouble("How wide: "); // ask user for width
@@ -196,7 +195,70 @@ public class FlagDrawer{
      * The flag is 1/2 as high as it is wide (ratio 1:2).
      */
     public void drawKoruFlag() {
-        /*# YOUR CODE HERE */
+        UI.clearGraphics();  
+        UI.println("Koru Flag");
+        double width = UI.askDouble("How wide: "); // ask user for width
+        
+        // declare and intalise local variables
+        double height = width * 1/2;
+        double halfWidth = width * 1/2;
+        double blueHalfLeft = LEFT + halfWidth;
+        // for big white circle
+        double semiCircleLeft = LEFT + (width * 21/100);
+        double semiCircleTop = TOP - (height * 9/125);
+        double semiCircleDiamiter = width * 57/100;
+        // for small blue circle
+        double smallBlueLeft = LEFT + (width * 58/100);
+        double smallBlueTop = TOP + (height * 27/100);
+        double smallBlueDiamiter = width * 22/100;
+        // for big blue circle
+        double bigBlueLeft = LEFT + (width * 29/100);
+        double bigBlueTop = TOP + (height * 41/500);
+        double bigBlueDiamiter = width * 41/100;
+        // for small white circle
+        double smallWhiteLeft = LEFT + (width * 61/100);
+        double smallWhiteTop = TOP + (height * 41/125);
+        double smallWhiteDiamiter = width * 17/100;
+        
+        
+        // Draw red half
+        UI.setColor(Color.red); // Use red pen
+        UI.fillRect(LEFT, TOP, halfWidth, height); // draw rectangle to make half the flag red
+        
+        // Draw blue half
+        UI.setColor(Color.blue); // Use blue pen
+        UI.fillRect(blueHalfLeft, TOP, halfWidth, height); // draw rectangle to make half the flag blue
+        
+        // Draw bottom white semi-circle
+        UI.setColor(Color.white); // Use white pen
+        UI.fillArc(semiCircleLeft, semiCircleTop, semiCircleDiamiter, semiCircleDiamiter, 180, 180); // bottom half of the big white circle
+        
+        // Draw small blue circle
+        UI.setColor(Color.blue); // Use blue pen 
+        // small blue circle to cut off the right section of the big white corcle 
+        UI.fillArc(smallBlueLeft, smallBlueTop, smallBlueDiamiter, smallBlueDiamiter, 0, 360); 
+        
+        // Draw top white semi-circle
+        UI.setColor(Color.white); // Use white pen
+        UI.fillArc(semiCircleLeft, semiCircleTop, semiCircleDiamiter, semiCircleDiamiter, 0, 180); // top half of big white circle 
+        
+        // Draw big blue circle
+        UI.setColor(Color.blue); // Use blue pen
+        UI.fillArc(bigBlueLeft, bigBlueTop, bigBlueDiamiter, bigBlueDiamiter, 0, 360); // blue center circle, makes white circle a donut
+        
+        // Draw small white circle
+        UI.setColor(Color.white); // Use white pen
+        UI.fillArc (smallWhiteLeft, smallWhiteTop, smallWhiteDiamiter, smallWhiteDiamiter, 0, 360); // end of the koru
+        
+        // Erase top of circle
+        UI.eraseRect(LEFT, TOP - height, width, height); // cut off top of the big white circle 
+        
+        // Erace bottom of circle
+        UI.eraseRect(LEFT, TOP + height, width, height); // cut off bottom of the big white circle
+        
+        // Draw Flag Outline
+        UI.setColor(Color.black); // Use black pen
+        UI.drawRect(LEFT, TOP, width, height); // draw black outline
 
     }
 
