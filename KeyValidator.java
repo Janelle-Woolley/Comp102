@@ -45,6 +45,11 @@ public class KeyValidator {
         }
         
         // if key is more than 12
+        if(key.length() > 12){
+            UI.println("Key is too long!");
+            validKey = false;
+        }
+        
         // starts with ? or !
         // contains @
         // has 1 upper case and 1 lower case
