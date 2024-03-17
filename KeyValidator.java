@@ -36,8 +36,15 @@ public class KeyValidator {
     public void validateKey(String key){
         /*# YOUR CODE HERE */
         
-        // is less than 6
-        // is more than 12
+        boolean validKey = true;
+        
+        // if key is less than 6
+        if(key.length() < 6){
+            UI.println("Key is too short!");
+            validKey = false;
+        }
+        
+        // if key is more than 12
         // starts with ? or !
         // contains @
         // has 1 upper case and 1 lower case
