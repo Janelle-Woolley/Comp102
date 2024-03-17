@@ -62,7 +62,15 @@ public class KeyValidator {
             validKey = false;
         }
         
-        // has 1 upper case and 1 lower case
+        // if key has no upper case 
+        String keyLowerCase = key.toLowerCase(); // set key to lower case
+        // if key match keyLowerCase, key doesn't contain an uppercase letter
+        if(key.equals(keyLowerCase)){
+            UI.println("Key must contain at least one UPPER CASE letter");
+            validKey = false;
+        }
+        
+        //and 1 lower case
 
     }
 
