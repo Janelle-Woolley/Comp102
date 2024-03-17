@@ -38,19 +38,23 @@ public class KeyValidator {
         
         boolean validKey = true;
         
-        // if key is less than 6
+        // if length of the key is less than 6
         if(key.length() < 6){
-            UI.println("Key is too short!");
+            UI.println("Key is too short");
             validKey = false;
         }
         
-        // if key is more than 12
+        // if length of the key is greater than 12
         if(key.length() > 12){
-            UI.println("Key is too long!");
+            UI.println("Key is too long");
             validKey = false;
         }
         
-        // starts with ? or !
+        // if key starts with ? or !
+        if(key.startsWith("?") || key.startsWith("!")){
+            UI.println("Key cannot start with special charaters ? or !");
+            validKey = false;
+        }
         // contains @
         // has 1 upper case and 1 lower case
 
