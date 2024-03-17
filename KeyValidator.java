@@ -55,7 +55,13 @@ public class KeyValidator {
             UI.println("Key cannot start with special charaters ? or !");
             validKey = false;
         }
-        // contains @
+        
+        // if key contains @
+        if(key.contains("@")){
+            UI.println("Key cannot contain @");
+            validKey = false;
+        }
+        
         // has 1 upper case and 1 lower case
 
     }
