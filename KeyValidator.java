@@ -15,7 +15,7 @@ import java.awt.Color;
  * Asks user for a key word and checks whether it meets a set of rules or not.
  *
  * @author Janelle Woolley
- * @version 1.0 18/03/2024
+ * @version 1.0 19/03/2024
  */
 
 public class KeyValidator {
@@ -34,19 +34,12 @@ public class KeyValidator {
      * Report that the key is valid or report ALL the rules that the key failed.
      */
     public void validateKey(String key){
-        /*# YOUR CODE HERE */
-        
+        // track whether the key is valid or not
         boolean validKey = true;
         
         // if length of the key is less than 6
-        if(key.length() < 6){
-            UI.println("Key is too short");
-            validKey = false;
-        }
-        
-        // if length of the key is greater than 12
-        if(key.length() > 12){
-            UI.println("Key is too long");
+        if(key.length() < 6 || key.length() > 12){
+            UI.println("Key must be between 6 & 12 characters long");
             validKey = false;
         }
         
@@ -62,19 +55,10 @@ public class KeyValidator {
             validKey = false;
         }
         
-        // if key has no upper case letter
-        String keyLowerCase = key.toLowerCase(); // set key to lower case
         // if key is the same as keyLowerCase, key doesn't contain an uppercase letter
-        if(key.equals(keyLowerCase)){
-            UI.println("Key must contain at least one UPPER CASE letter");
-            validKey = false;
-        }
-        
-        // if key has no lower case letter
-        String keyUpperCase = key.toUpperCase(); // set key to upper case
-        // if key is the same as keyUpperCase, key doesn't contain a lowercase letter
-        if(key.equals(keyUpperCase)){
-            UI.println("Key must contain at least one lower case letter");
+        // if key is the same as keyUpperCase, key doesn't contain a lowercase
+        if(key.equals(key.toLowerCase()) || key.equals(key.toUpperCase())){
+            UI.println("Key must contain at least one upper case and one lower case letter");
             validKey = false;
         }
         
