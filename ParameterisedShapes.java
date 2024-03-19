@@ -17,9 +17,12 @@ import javax.swing.JColorChooser;
  * Challenge: draw the flag of China
  * 
  * @author Janelle Woolley
- * @ version 1.0 18/03/2024
+ * @ version 1.0 19/03/2024
  */
 public class ParameterisedShapes{
+    // public static final 
+    // start angle
+    // arc angle
 
     /**
      * Asks user for a position, three colours, three heights and whether the circles are filled.
@@ -36,9 +39,9 @@ public class ParameterisedShapes{
         /*# YOUR CODE HERE */
         
         // height for stripes
-        // height stripe 1
-        // height stripe 2
-        // height stripe 3
+        // height for stripe 1
+        // height for stripe 2
+        // height for stripe 3
         
         // circles filled or unfilled
         
@@ -52,23 +55,45 @@ public class ParameterisedShapes{
      * It then calls drawStripe three times to draw the three stripes,
      * and outlines the rectangle with a black contour.
      */
-    public void drawFancyRect(/*# YOUR CODE HERE */ ){
+    public void drawFancyRect(/*# YOUR CODE HERE */ /* left, top, h1, h2, h3, col1, col2, col3, circleType */){
         UI.clearGraphics();
         /*# YOUR CODE HERE */
         
+        // height = h1 + h2 + h3
+        // width = height * 1.5
+        // topStripeTwo = top + h1
+        // topStripeThree = top + h1 + h2
+        
         // call draw stripe x3
+        // stripe 1 (left, top, width, h1, col1, circleType, 0)
+        // stripe 2 (left, topStripeTwo, width, h2, col2, circleType, 1)
+        // stripe 3 (left, topStripeThree, width, h3, col3, circleType, 2)
+        
         // draw black outline
+        // Use black pen
+        // draw rect (left, top, width, height)
     
     }
 
     /**
      * Draws a stripe at the given position that has the right circle at the right place.
      */
-    public void drawStripe(/*# YOUR CODE HERE */ ){
+    public void drawStripe(/*# YOUR CODE HERE */ /* left, top, width, height, stripeColor circleType, circleShift */ ){
         /*# YOUR CODE HERE */
+        // diameter = height * 0.2
+        // circleLeftShift = ((left + (width/3 * circleShift)) + ((width/3)/2)) - diameter/2
+        // circleTopShift = (top + height/2) - diameter/2
         
         // draw stripe
+        // Use color pen
+        // fill rect (left, top, width, height)
+        
         // draw circle
+        // Use black pen
+        // if circle is filled
+            // fill arc (circleLeftShift, circleTopShift, diameter, diameter, 0, 360)
+        // else circle is just outline
+            // draw arc (circleLeftShift, circleTopShift, diameter, diameter, 0, 360)
 
     }
 
