@@ -79,20 +79,22 @@ public class ParameterisedShapes{
      */
     public void drawStripe(/*# YOUR CODE HERE */ double left, double top, double width, double height, Color stripeColor, boolean circleType, int circleShift){
         /*# YOUR CODE HERE */
-        // diameter = height * 0.2
-        // circleLeftShift = ((left + (width/3 * circleShift)) + ((width/3)/2)) - diameter/2
-        // circleTopShift = (top + height/2) - diameter/2
+        double diameter = height * 0.2;
+        double circleLeftShift = ((left + (width/3 * circleShift)) + ((width/3)/2)) - diameter/2;
+        double circleTopShift = (top + height/2) - diameter/2;
         
         // draw stripe
-        // Use color pen
-        // fill rect (left, top, width, height)
+        UI.setColor(stripeColor); // Use pen that is the color of the stripeColor variable
+        UI.fillRect(left, top, width, height); // draw the stripe
         
         // draw circle
-        // Use black pen
+        UI.setColor(Color.black); // Use black pen
         // if circle is filled
-            // fill oval (circleLeftShift, circleTopShift, diameter, diameter)
-        // else circle is just outline
-            // draw oval (circleLeftShift, circleTopShift, diameter, diameter)
+        if(circleType){
+            UI.fillOval(circleLeftShift, circleTopShift, diameter, diameter); // draws filled circle
+        } else { // else circle is just outline
+            UI.drawOval(circleLeftShift, circleTopShift, diameter, diameter); // draws outline of circle
+        }
 
     }
 
