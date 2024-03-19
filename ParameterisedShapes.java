@@ -20,10 +20,6 @@ import javax.swing.JColorChooser;
  * @ version 1.0 19/03/2024
  */
 public class ParameterisedShapes{
-    // public static final 
-    // start angle
-    // arc angle
-
     /**
      * Asks user for a position, three colours, three heights and whether the circles are filled.
      * Then calls the drawFancyRect method, passing the appropriate arguments
@@ -38,15 +34,17 @@ public class ParameterisedShapes{
         UI.println("Now choose the sizes");
         /*# YOUR CODE HERE */
         
-        // height for stripes
-        // height for stripe 1
-        // height for stripe 2
-        // height for stripe 3
+        // ask user for heights of stripes
+        double h1 = UI.askDouble("Height of first stripe: "); // height for stripe 1
+        double h2 = UI.askDouble("Height of second stripe: "); // height for stripe 2
+        double h3 = UI.askDouble("Height of third stripe: "); // height for stripe 3
         
-        // circles filled or unfilled
+        // ask user if circles are filled or unfilled
+        boolean circlesFilled = UI.askBoolean("Do you want the circles filled (yes/no): ");
         
         // call drawFancyRect
-
+        drawFancyRect(left, top, h1, h2, h3, col1, col2, col3, circlesFilled);
+        
     }
 
     /**
@@ -55,7 +53,8 @@ public class ParameterisedShapes{
      * It then calls drawStripe three times to draw the three stripes,
      * and outlines the rectangle with a black contour.
      */
-    public void drawFancyRect(/*# YOUR CODE HERE */ /* left, top, h1, h2, h3, col1, col2, col3, circleType */){
+    public void drawFancyRect(/*# YOUR CODE HERE */ double left, double top, double h1, double h2, double h3, Color col1, Color col2, Color col3, boolean circleType){
+
         UI.clearGraphics();
         /*# YOUR CODE HERE */
         
@@ -91,9 +90,9 @@ public class ParameterisedShapes{
         // draw circle
         // Use black pen
         // if circle is filled
-            // fill arc (circleLeftShift, circleTopShift, diameter, diameter, 0, 360)
+            // fill oval (circleLeftShift, circleTopShift, diameter, diameter)
         // else circle is just outline
-            // draw arc (circleLeftShift, circleTopShift, diameter, diameter, 0, 360)
+            // draw oval (circleLeftShift, circleTopShift, diameter, diameter)
 
     }
 
