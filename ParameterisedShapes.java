@@ -58,26 +58,26 @@ public class ParameterisedShapes{
         UI.clearGraphics();
         /*# YOUR CODE HERE */
         
-        // height = h1 + h2 + h3
-        // width = height * 1.5
-        // topStripeTwo = top + h1
-        // topStripeThree = top + h1 + h2
+        double height = h1 + h2 + h3;
+        double width = height * 1.5;
+        double topStripeTwo = top + h1;
+        double topStripeThree = top + h1 + h2;
         
-        // call draw stripe x3
-        // stripe 1 (left, top, width, h1, col1, circleType, 0)
-        // stripe 2 (left, topStripeTwo, width, h2, col2, circleType, 1)
-        // stripe 3 (left, topStripeThree, width, h3, col3, circleType, 2)
+        // call drawStripe x3 to draw the stripes
+        drawStripe(left, top, width, h1, col1, circleType, 0);
+        drawStripe(left, topStripeTwo, width, h2, col2, circleType, 1);
+        drawStripe(left, topStripeThree, width, h3, col3, circleType, 2);
         
         // draw black outline
-        // Use black pen
-        // draw rect (left, top, width, height)
+        UI.setColor(Color.black); // Use black pen
+        UI.drawRect(left, top, width, height); // draw black outline around the rectangle
     
     }
 
     /**
      * Draws a stripe at the given position that has the right circle at the right place.
      */
-    public void drawStripe(/*# YOUR CODE HERE */ /* left, top, width, height, stripeColor circleType, circleShift */ ){
+    public void drawStripe(/*# YOUR CODE HERE */ double left, double top, double width, double height, Color stripeColor, boolean circleType, int circleShift){
         /*# YOUR CODE HERE */
         // diameter = height * 0.2
         // circleLeftShift = ((left + (width/3 * circleShift)) + ((width/3)/2)) - diameter/2
