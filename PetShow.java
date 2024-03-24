@@ -62,18 +62,18 @@ public class PetShow{
     public Animal closestToLeft (Animal a1, Animal a2, Animal a3){
         /*# YOUR CODE HERE */
         // get the animals lefts
-        // compare the animals lefts
-            // a1 > a2 && a1 > a3
-            // return a1
-            
-            // a2 > a1 && a2 > a3
-            // return a2
-            
-            // else
-            // return a3
+        double a1Left = a1.getX();
+        double a2Left = a2.getX();
+        double a3Left = a3.getX();
         
-        return a1; // just so it compiles
-
+        // compare the animals lefts
+        if(a1Left > a2Left && a1Left > a3Left){
+            return a1;
+        } else if (a2Left > a1Left && a2Left > a3Left){
+            return a2;
+        } else {
+            return a3;
+        }
     }
     
     /** return the animal closest to the right */
