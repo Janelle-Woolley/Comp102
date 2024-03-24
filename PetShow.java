@@ -96,15 +96,14 @@ public class PetShow{
 
     /** Make animal perform a routine*/
     public void routine(Animal animal){
-        // introduce("hi hi hi")
-        // go left()
-        // jump(50)
-        // speak("yippe")
-        // go right()
-        // shout("i'm done")
+        animal.introduce("hi hi hi");
+        animal.goLeft();
+        animal.jump(50);
+        animal.speak("yippe!");
+        animal.goRight();
+        animal.shout("i'm done");
         
     }
-
 
     /** Make buttons to let the user run the methods */
     public void setupGUI(){
