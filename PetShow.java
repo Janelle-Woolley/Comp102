@@ -37,17 +37,24 @@ public class PetShow{
         UI.drawLine(EXIT_RIGHT, 10, EXIT_RIGHT, 700);
         /*# YOUR CODE HERE */
         
+        //(int)(Math.random() * (max - min) + min)
+        
         // create three animals
         // randomly choose number between START_LEFT & START_RIGHT
         // animal 1
+        Animal animal1 = new Animal("turtle", "Boris", (START_LEFT + (START_RIGHT - START_LEFT) * Math.random()), 100);
+        
         // randomly choose number between START_LEFT & START_RIGHT
         // animal 2
+        Animal animal2 = new Animal("bird", "Patrica", (START_LEFT + (START_RIGHT - START_LEFT) * Math.random()), 500);
+        
         // randomly choose number between START_LEFT & START_RIGHT
         // animal 3
+        Animal animal3 = new Animal("dinosaur", "Dave", (START_LEFT + (START_RIGHT - START_LEFT) * Math.random()), 300);
         
-        // routine(animal 1)
-        // routine(animal 2)
-        // routine(animal 3)
+        routine(animal1);
+        routine(animal2);
+        routine(animal3);
         
         // get leftmost animal
         // get rightmost animal
@@ -98,11 +105,14 @@ public class PetShow{
     public void routine(Animal animal){
         animal.introduce("hi hi hi");
         animal.goLeft();
+        animal.goLeft();
         animal.jump(50);
         animal.speak("yippe!");
         animal.goRight();
+        animal.goRight();
+        animal.goRight();
+        animal.jump(100);
         animal.shout("i'm done");
-        
     }
 
     /** Make buttons to let the user run the methods */
