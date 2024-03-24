@@ -67,9 +67,9 @@ public class PetShow{
         double a3Left = a3.getX();
         
         // compare the animals lefts
-        if(a1Left > a2Left && a1Left > a3Left){
+        if(a1Left < a2Left && a1Left < a3Left){
             return a1;
-        } else if (a2Left > a1Left && a2Left > a3Left){
+        } else if (a2Left < a1Left && a2Left < a3Left){
             return a2;
         } else {
             return a3;
@@ -80,18 +80,18 @@ public class PetShow{
     public Animal closestToRight (Animal a1, Animal a2, Animal a3){
         /*# YOUR CODE HERE */
         // get the animals rights
-        // compare the animals rights
-            // a1 > a2 && a1 > a3
-            // return a1
-            
-            // a2 > a1 && a2 > a3
-            // return a2
-            
-            // else
-            // return a3
-
-        return a1; // just so it compiles
+        double a1Right = a1.getX();
+        double a2Right = a2.getX();
+        double a3Right = a3.getX();
         
+        // compare the animals rights
+        if(a1Right > a2Right && a1Right > a3Right){
+            return a1;
+        } else if (a2Right > a1Right && a2Right > a3Right){
+            return a2;
+        } else {
+            return a3;
+        }
     }
 
     /** Make animal perform a routine*/
