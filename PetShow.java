@@ -35,7 +35,6 @@ public class PetShow{
     public void animate(){
         UI.drawLine(EXIT_LEFT, 10, EXIT_LEFT, 700);
         UI.drawLine(EXIT_RIGHT, 10, EXIT_RIGHT, 700);
-        /*# YOUR CODE HERE */
         
         //(int)(Math.random() * (max - min) + min)
         
@@ -57,17 +56,29 @@ public class PetShow{
         routine(animal3);
         
         // get leftmost animal
+        Animal leftAnimal = closestToLeft(animal1, animal2, animal3);
         // get rightmost animal
+        Animal rightAnimal = closestToRight(animal1, animal2, animal3);
         
-        // while leftmost animal left < EXIT_LEFT && rightmost animal right < EXIT_RIGHT
+        // while the animals haven't crossed the line
+        while(leftAnimal.getX() > EXIT_LEFT && rightAnimal.getX() < EXIT_RIGHT) {
             // leftmost animal move left
+            leftAnimal.goLeft();
             // rightmost animal move right
-
+            rightAnimal.goRight();
+        }
+        
+        // have the winner shout
+        // if the animal has the greater distance between the exit (after crossing) and animal's x position it wins
+        if(rightAnimal.getX() - EXIT_RIGHT > EXIT_LEFT - leftAnimal.getX()){
+            rightAnimal.speak("I win");
+        } else if (rightAnimal.getX() - EXIT_RIGHT < EXIT_LEFT - leftAnimal.getX()){
+            leftAnimal.speak("I win");
+        }
     }
 
     /** return the animal closest to the left */
     public Animal closestToLeft (Animal a1, Animal a2, Animal a3){
-        /*# YOUR CODE HERE */
         // get the animals lefts
         double a1Left = a1.getX();
         double a2Left = a2.getX();
