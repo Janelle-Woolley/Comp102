@@ -30,27 +30,25 @@ public class PatternsDrawer{
         int num = UI.askInt("How many rows:");
         /*# YOUR CODE HERE */
         
-        // num of rows == number of columns
-        // If the row and column are both even, or both odd, then it is white
-        // width = PATTERN_SIZE/num;
-        // Fill Rect left, top, width, height
+        double width = PATTERN_SIZE/num;
         
-        // row = 0;
-        // column = 0;
-        // width = PATTERN_SIZE/num;
+        for(int row = 0; row < num; row ++){
+            for(int column = 0; column < num; column ++){
+                if (((row%2 == 0) && (column%2 == 0)) || ((row%2 != 0) && (column%2 != 0))){
+                    UI.setColor(Color.white); // Use white pen
+                } else {
+                    UI.setColor(Color.black); // Use black pen
+                }
+                
+                // draw a square of the board
+                UI.fillRect(PATTERN_LEFT + (width*column), PATTERN_TOP + (width*row), width, width);
+                
+            }
+        }
         
-        // for row < nums
-            // for column < nums
-                // if (((row%2 == 0) && (column%2 == 0)) || ((row%2 != 0) && (column%2 != 0)))
-                    // Use white pen
-                // else
-                    // Use black pen
-                
-                // Fill Rect (PATTERN_LEFT + (width*column), PATTERN_TOP + (width*row), width, width)
-                
-                // column++
-            // row++
-
+        UI.setColor(Color.black); // Use black pen
+        // draw outline of board
+        UI.drawRect(PATTERN_LEFT, PATTERN_TOP, PATTERN_SIZE, PATTERN_SIZE);
     }
 
     /** TriGrid
@@ -63,7 +61,6 @@ public class PatternsDrawer{
         int num = UI.askInt("How many rows:");
         /*# YOUR CODE HERE */
         
-        // use black pen
         // row = 0
         // column = 0
         // totalColumn = num
