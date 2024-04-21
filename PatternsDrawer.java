@@ -61,20 +61,17 @@ public class PatternsDrawer{
         int num = UI.askInt("How many rows:");
         /*# YOUR CODE HERE */
         
-        // row = 0
-        // column = 0
-        // totalColumn = num
-        // widthWithGap = PATTERN_SIZE/num
-        // squareWidth = widthWithGap * 0.9
+        int totalColumn = num;
+        double widthWithGap = PATTERN_SIZE/num;
+        double squareWidth = widthWithGap * 0.9;
         
-        // for row < num
-            // for column < totalColumn
-                // Fill Rect (PATTERN_LEFT + (widthWithGap*column), PATTERN_TOP + (widthWithGap*row), squareWidth, squareWidth)
-                
-                // column++
-            // totalColumn--
-            // row++
-
+        for(int row = 0; row < num; row ++){
+            for(int column = 0; column < totalColumn; column ++){
+                // draw a square
+                UI.fillRect(PATTERN_LEFT + (widthWithGap*column), PATTERN_TOP + (widthWithGap*row), squareWidth, squareWidth);
+            }
+            totalColumn--;
+        }
     }
 
 
