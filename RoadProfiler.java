@@ -73,15 +73,16 @@ public class RoadProfiler{
     public double maximumHeight(ArrayList<Double> listOfHeights) {
         /*# YOUR CODE HERE */
         
-        // max = Double.NEGATIVE_INFINITY
+        double max = Double.NEGATIVE_INFINITY;
         
-        // for num : listOfHeight
-            // if num > max
-                // max = num
+        for(double num : listOfHeights){
+            if (num > max){
+                max = num;
+            }
+        }
         
-        // return max
-        return 0;
-    
+        return max;
+        
     }
 
     /**
@@ -94,23 +95,26 @@ public class RoadProfiler{
         UI.drawLine(LEFT, SEA_LEVEL, LEFT+1000, SEA_LEVEL); // draw the base line to show sea level
         /*# YOUR CODE HERE */
         
-        // draw line startX, startY, endX, endY
-        // arraylist is y values
-        // heights will be plotted as a distance above y = SEA_LEVEL
-        // STEP = horizontal distance along road between height measurements
+        double prevX = LEFT;
+        double prevY = listOfHeights.get(0);
         
-        // prevX = LEFT
-        // prevY = listOfHeights.get(0)
+        // loops through list starting at the second value
+        for (int num = 1; num < listOfHeights.size(); num++){
+            double y;
+            if(listOfHeights.get(num) > 400){
+                y = listOfHeights.get(num) - SEA_LEVEL;
+            } else {
+                y = SEA_LEVEL - listOfHeights.get(num);
+            }
+            
+            double x = prevX + STEP;
+            
+            UI.drawLine(prevX, prevY, x, y);
+            
+            prevX = x;
+            prevY = y;
+        }
         
-        // for (num = 1; num < listOfHeights.size(); num++)
-            // y = SEA_LEVEL - listOfHeights.get(num)
-            // x = prevX + STEP
-            
-            // draw line (prevX, prevY, x, y)
-            
-            // prevX = x
-            // prevY = y
-    
         UI.println("Finished plotting");
     }
 
