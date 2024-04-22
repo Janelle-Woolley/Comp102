@@ -56,12 +56,13 @@ public class RoadProfiler{
     public void printAverageHeight(ArrayList<Double> listOfHeights) {
         /*# YOUR CODE HERE */
         
-        // total = 0;
-        // for num : listOfHeights
-            // total = total + num
-        
-        // average = total/listOfHeights.size()
-        // UI.println("Average: " + average)
+        double total = 0;
+        for (double num : listOfHeights){
+            total = total + num;
+        }
+            
+        double average = total/listOfHeights.size();
+        UI.println("Average: " + average);
 
     }
 
