@@ -51,13 +51,13 @@ public class WeatherReporter{
     public void plotTemperatures(){
         /*# YOUR CODE HERE */
         
-        // ask name of file
+        String file = UIFileChooser.open("Choose image file"); // ask name of file
         
-        // try
-            // create scanner
-            // call plotSnapshot
-            // close scanner
-        // exeptions
+        try{
+            Scanner scan = new Scanner(Path.of(file)); // create scanner
+            plotSnapshot(scan); // call plotSnapshot
+            scan.close(); // close scanner
+        }catch (IOException e) { UI.printf("File failure %s\n", e);}
         
     }
 
