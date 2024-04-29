@@ -83,22 +83,34 @@ public class WeatherReporter{
     public void plotSnapshot(Scanner sc){
         UI.drawImage("map-new-zealand.gif", 0, 0);
         /*# YOUR CODE HERE */
+        UI.setColor(Color.black); // set the pen color to black
         
-        // read first line
-        // draw string (string, LEFT, TOP)
+        String dateInfo = sc.nextLine();// read first line
         
-        // read second line (station number)
-        // for int i = 0; i < station number; i++
-            // read next line (name, coordinates, data)
+        Scanner dateMaker = new Scanner(dateInfo); // scan the line
+        int day = dateMaker.nextInt();
+        int month = dateMaker.nextInt();
+        int year = dateMaker.nextInt();
+        int time = dateMaker.nextInt()/100;
+        String date = day + "/" + month + "/" + year + " at " + time + ":00"; // make into new string
+        UI.drawString(date, LEFT_TEXT, TOP_TEXT); // draw the date & time on the map
+    
+        int stations = sc.nextInt(); // read second line (station number)
+        for (int i = 0; i < stations; i++){
+            sc.next(); // read next line (name, coordinates, data)
             // name = first token (discard it)
-            // x cord = second token
-            // y cord = third token
-            // temp = fourth token
-            // discard next three tokens (scan.next())
+            int x = sc.nextInt(); // x cord = second token
+            int y = sc.nextInt(); // y cord = third token
+            double temp = sc.nextDouble(); // temp = fourth token
             
-            // UI.setColor(getTemperatureColor(temp))
-            // UI.fillOval(x cord - DIAM/2, y cord - DIAM/2, DIAM, DIAM)
-
+            UI.setColor(getTemperatureColor(temp)); // change pen color to match the temp
+            UI.fillOval(x - DIAM/2, y - DIAM/2, DIAM, DIAM); // draw temp circle in location
+            
+            // discard next three tokens (scan.next())
+            sc.next();
+            sc.next();
+            sc.next();
+        }
     }
 
     /**   CHALLENGE
