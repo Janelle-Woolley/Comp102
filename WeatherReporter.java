@@ -96,12 +96,30 @@ public class WeatherReporter{
         UI.drawString(date, LEFT_TEXT, TOP_TEXT); // draw the date & time on the map
     
         int stations = sc.nextInt(); // read second line (station number)
+        double maxTemp = Double.MIN_VALUE;
+        double minTemp = Double.MAX_VALUE;
+        int maxX = 0;
+        int maxY = 0;
+        int minX = 0;
+        int minY = 0;
+        
         for (int i = 0; i < stations; i++){
             sc.next(); // read next line (name, coordinates, data)
             // name = first token (discard it)
             int x = sc.nextInt(); // x cord = second token
             int y = sc.nextInt(); // y cord = third token
             double temp = sc.nextDouble(); // temp = fourth token
+            
+            if(temp > maxTemp){
+                maxTemp = temp;
+                maxX = x;
+                maxY = y;
+            }
+            if(temp < minTemp){
+                minTemp = temp;
+                minX = x;
+                minY = y;
+            }
             
             UI.setColor(getTemperatureColor(temp)); // change pen color to match the temp
             UI.fillOval(x - DIAM/2, y - DIAM/2, DIAM, DIAM); // draw temp circle in location
@@ -111,6 +129,11 @@ public class WeatherReporter{
             sc.next();
             sc.next();
         }
+        UI.setColor(getTemperatureColor(maxTemp)); // change pen color to match the temp
+        UI.fillOval(maxX - DIAM, maxY - DIAM, DIAM*2, DIAM*2); // draw temp circle in location
+            
+        UI.setColor(getTemperatureColor(minTemp)); // change pen color to match the temp
+        UI.fillOval(minX - DIAM, minY - DIAM, DIAM*2, DIAM*2); // draw temp circle in location
     }
 
     /**   CHALLENGE
