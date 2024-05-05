@@ -30,11 +30,11 @@ public class Ball{
     //   The ball should initially be not moving at all. (step should be 0)
     /*# YOUR CODE HERE */
     
-    // private x position
-    // private height
-    // private stepX = 0
-    // private stepY = 0
-    // private color
+    private double xPos;
+    private double height;
+    private double stepX = 0;
+    private double stepY = 0;
+    private Color color;
 
     // Constructor
     /** Construct a new Ball object.
@@ -46,10 +46,10 @@ public class Ball{
     public Ball(double x, double h){
         /*# YOUR CODE HERE */
         
-        // this.x position = x
-        // this.height = h
-        // this.color = random color
-
+        this.xPos = x - DIAM/2;
+        this.height = GROUND - h - DIAM;
+        this.color = new Color((float)Math.random(),(float)Math.random(),(float)Math.random());
+        
     }
 
     // Methods
@@ -60,14 +60,15 @@ public class Ball{
     public void draw(){
         /*# YOUR CODE HERE */
         
-        // if x position < RIGHT_END
+        if (xPos < RIGHT_END){
             // draw ball
-            // set pen color to this.ball color
-            // UI.fillOval(x position, height, DIAM/2, DIAM/2)
+            UI.setColor(color); // set pen color to the ball's color
+            UI.fillOval(xPos, height, DIAM, DIAM); // draw ball
             
             // draw outline
-            // set pen color to black
-            // UI.drawOval(x position, height, DIAM/2, DIAM/2)
+            UI.setColor(Color.black); // set pen color to black
+            UI.drawOval(xPos, height, DIAM, DIAM); // draw outline around ball
+        }
 
     }
 
@@ -81,13 +82,16 @@ public class Ball{
     public void step(){
         /*# YOUR CODE HERE */
         
-        // this.x position = this.x position + this.stepX
-        // this.height = this.height + this.stepY
-        // this.stepY = this.stepY - 0.2
+        xPos = xPos + stepX;
+        height = height + stepY;
+        if (stepY != 0){
+            stepY = stepY - 0.2;
+        }
         
-        // if this.height < GROUND
-            // this.height = GROUND
-            // this.stepY = 0
+        if (GROUND - height >= GROUND){
+            height = GROUND - DIAM;
+            stepY = 0;
+        }
 
     }
 
@@ -98,7 +102,7 @@ public class Ball{
     public void setXSpeed(double xSpeed){
         /*# YOUR CODE HERE */
         
-        // this.stepX = xSpeed
+        this.stepX = xSpeed;
 
     }
 
@@ -109,7 +113,7 @@ public class Ball{
     public void setYSpeed(double ySpeed){
         /*# YOUR CODE HERE */
         
-        // this.stepY = ySpeed
+        this.stepY = ySpeed;
 
     }
 
@@ -119,8 +123,7 @@ public class Ball{
     public double getHeight(){
         /*# YOUR CODE HERE */
         
-        return GROUND;
-        // return this.height;
+        return this.height;
 
     }
 
@@ -130,8 +133,7 @@ public class Ball{
     public double getX(){
         /*# YOUR CODE HERE */
         
-        return 50;
-        // return this.x position
+        return this.xPos;
 
     }
 
