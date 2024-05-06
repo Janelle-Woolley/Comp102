@@ -46,8 +46,8 @@ public class Ball{
     public Ball(double x, double h){
         /*# YOUR CODE HERE */
         
-        this.xPos = x - DIAM/2;
-        this.height = GROUND - h - DIAM;
+        this.xPos = x;
+        this.height = h;
         this.color = new Color((float)Math.random(),(float)Math.random(),(float)Math.random());
         
     }
@@ -60,14 +60,14 @@ public class Ball{
     public void draw(){
         /*# YOUR CODE HERE */
         
-        if (xPos < RIGHT_END){
+        if (xPos < RIGHT_END && height < GROUND){
             // draw ball
             UI.setColor(color); // set pen color to the ball's color
-            UI.fillOval(xPos, height, DIAM, DIAM); // draw ball
+            UI.fillOval(xPos - DIAM/2, GROUND - height - DIAM, DIAM, DIAM); // draw ball
             
             // draw outline
             UI.setColor(Color.black); // set pen color to black
-            UI.drawOval(xPos, height, DIAM, DIAM); // draw outline around ball
+            UI.drawOval(xPos - DIAM/2, GROUND - height - DIAM, DIAM, DIAM); // draw outline around ball
         }
 
     }
@@ -84,12 +84,10 @@ public class Ball{
         
         xPos = xPos + stepX;
         height = height + stepY;
-        if (stepY != 0){
-            stepY = stepY - 0.2;
-        }
-        
-        if (GROUND - height >= GROUND){
-            height = GROUND - DIAM;
+        stepY -= 0.2;
+    
+        if (height < 0){
+            height = 0;
             stepY = 0;
         }
 
